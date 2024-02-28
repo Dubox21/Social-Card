@@ -1,0 +1,25 @@
+.container-footer hr {
+    border-color: var(--greyLight);
+    opacity: 0.3;
+}
+
+.container-interaction{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.container-interaction__single{
+    margin: 0 20px;
+    color: var(--greyDark);
+}
+
+.container-interaction__single p{
+    margin: 2px;
+    font-size: 14px;
+}
+
+.container-interaction__single i{
+    font-size: 16px;
+}
+

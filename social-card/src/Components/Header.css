@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 9px;
+}
+
+.header i {
+    color: var(--greyDark);
+    padding-right: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+.container p {
+    font-size: 14px;
+}
+
+.container-logo img {
+    margin: 5px;
+    padding-top: 10px;
+    width: 30px;
+}
