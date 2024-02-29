@@ -1,7 +1,21 @@
-.App{
+.App {
   width: 400px;
   height: 500px;
   background-color: var(--white);
   border-radius: 15px;
-  margin: 120px 620px;
+  margin: 150px auto;
+}
+
+@media (min-width: 369px) and (max-width: 768px) {
+  .App {
+    margin: 200px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .App {
+    border-radius: 15px;
+    margin: 120px auto;
+    max-width: 400px;
+  }
 }
