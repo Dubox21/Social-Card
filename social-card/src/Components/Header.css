@@ -30,3 +30,9 @@
 .fontGrey {
     color: var(--darkGrey);
 }
+
+button {
+    display: flex;
+    background-color: var(--white);
+    border: none;
+}

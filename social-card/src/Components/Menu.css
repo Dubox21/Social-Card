@@ -1,0 +1,26 @@
+
+/*.menu{
+    background: orange;
+    /* width: 100%; 
+    padding: 1em;
+}*/
+
+/* .nav-bar a{} */
+
+.nav-bar{
+    display: flex;
+    justify-content: flex-end;
+    background-color: bisque;
+    align-items: center;
+    /* width: 100%; */
+}
+
+.nav-list{
+    list-style: none;
+    gap: 1rem;
+}
+
+
+ .nav-list__link{
+    margin: 0 .5em;
+ }
