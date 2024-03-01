@@ -8,7 +8,7 @@ import { useToggleMoreInfo } from '../hooks/useToggleMoreInfo'; // Importa el ho
 const Menu = () => {
     const sharePage = useSharePage();
     const {copied, copyLink } = useCopyLink(); // Utiliza el hook directamente como una función
-    // const addToBookmarks = useAddToBookmarks(); // Utiliza el hook directamente como una función
+    const addToBookmarks = useAddToBookmarks(); // Utiliza el hook directamente como una función
     const { showMoreInfo, toggleMoreInfo } = useToggleMoreInfo(); // Desestructura el objeto retornado por el hook
 
     return (
@@ -24,7 +24,7 @@ const Menu = () => {
                         </a>
                     </li>
                     <hr />
-                    {/* <li className='nav-list__link kanit-regular'><a href="#" onClick={addToBookmarks}><i className="fa-regular fa-star"></i> Guardar</a></li> */}
+                     <li className='nav-list__link kanit-regular'><a href="#" onClick={addToBookmarks}><i className="fa-regular fa-star"></i> Guardar</a></li>
                     <hr />
                     <li className='nav-list__link kanit-regular'>
                         <a href="#" onClick={toggleMoreInfo}>
