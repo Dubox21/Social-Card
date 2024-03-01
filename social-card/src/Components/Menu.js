@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Menu.css";
 import useSharePage from '../hooks/useSharePage';
 import useCopyLink from '../hooks/useCopyLink';
@@ -12,7 +12,7 @@ const Menu = () => {
     const { addedToBookmarks, addToBookmarks } = useAddToBookmarks();
 
     const handleAddToBookmarks = () => {
-        addToBookmarks(); // Asegúrate de que addToBookmarks sea una función aquí
+        addToBookmarks();
     };
 
     return (
@@ -38,11 +38,13 @@ const Menu = () => {
                             {showMoreInfo ? "Ocultar info" : "Mas info..."}
                         </a>
                         {showMoreInfo && (
-                <div className="more-info">
-                    {/* Aquí puedes colocar el contenido adicional que deseas mostrar */}
-                    <p>Más información aquí...</p>
-                </div>
-            )}
+                            <div className="more-info">
+                                <div className="scrollable-content">
+                                    <p> COMPONENTE "SOCIAL CARD" implementado en React.<br /><br />
+                                        <strong>Desarrollado por:</strong> <br /> Ambar Dubox </p>
+                                </div>
+                            </div>
+                        )}
                     </li>
                 </ul>
             </nav>

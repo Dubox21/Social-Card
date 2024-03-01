@@ -23,13 +23,13 @@
 }
 
 .modal-container::-webkit-scrollbar {
-    width: 5px; /* Ancho de la barra de desplazamiento */
-    height: 3px; /* Altura de la barra de desplazamiento */
+    width: 0; 
+    height: 5px; 
 }
 
 .modal-container::-webkit-scrollbar-thumb {
-    background-color: var(--grey); /* Color de fondo de la barra de desplazamiento */
-    border-radius: 10px; /* Radio de borde de la barra de desplazamiento */
+    /* background-color: var(--grey);  */
+    border-radius: 10px; 
 }
 
 .modal-close {
@@ -58,8 +58,8 @@
     }
 
     .modal-container {
-        min-width: 220px;
-        max-width: 220px;
+        min-width: 240px;
+        max-width: 240px;
         min-height: 300px;
         max-height: 300px;
     }

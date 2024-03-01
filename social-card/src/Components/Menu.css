@@ -32,13 +32,12 @@ ul li{
 font-size: 18px;
 }
 
-.more-info > div::-webkit-scrollbar {
-    width: 5px; /* Ancho de la barra de desplazamiento */
-    height: 5px; /* Altura de la barra de desplazamiento */
+.more-info {
+    max-height: 300px; 
+    overflow-y: auto;
+    color: var(--darkGrey);
 }
 
-/* Estilo para el área de la barra de desplazamiento */
-.more-info > div::-webkit-scrollbar-thumb {
-    background-color: var(--grey); /* Color de fondo de la barra de desplazamiento */
-    border-radius: 10px; /* Radio de borde de la barra de desplazamiento */
+.scrollable-content {
+    padding-right: 10px; 
 }

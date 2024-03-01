@@ -6,7 +6,7 @@ const Modal = ({children, isOpen, closeModal}) => {
       <article className={`modal ${isOpen && "is-open"}`}>
         <div className='modal-container'>
             <button class='modal-close' onClick={closeModal}><i class="fa-regular fa-circle-xmark"></i></button>
-            <div className='scroll'>{children}</div>
+            {children}
         </div>
       </article>  
   );
