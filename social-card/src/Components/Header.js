@@ -1,24 +1,25 @@
 import React, { useState } from 'react'; 
 import "./Header.css";
+import Modal from './Modal';
+import { useModal } from '../hooks/useModal';
 import Menu from "./Menu"; 
 
 function Header({ toggleMenu }) {
-    // const [menuVisible, setMenuVisible] = useState(false);
-
-    // const toggleMenu = () => {
-    //     setMenuVisible(!menuVisible);
-    // };
+    const[isOpenModal, openModal, closeModal] = useModal (false);
 
     return (
-        <div className='header'>
+        <header className='header'>
             <div className='container'>
                 <div className='container-logo'>
                     <img className="img" src={require("../Assets/sunflower.png")} alt="logo" />
                 </div>
                 <p className='kanit-regular'><strong>Developer</strong> <br /><span className='fontGrey'>@holajuniors</span></p>
             </div>
-            <button className='menu-open' onClick={toggleMenu}><i className="fa-solid fa-ellipsis-vertical"></i></button>
-    </div>
+            <button onClick={openModal}><i className="fa-solid fa-ellipsis-vertical"></i></button>
+            <Modal isOpen={isOpenModal} closeModal={closeModal}>
+        <Menu/>
+      </Modal>
+    </header>
     );
 }
 

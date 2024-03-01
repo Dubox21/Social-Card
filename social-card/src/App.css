@@ -10,14 +10,6 @@
   position: relative; /* Establece la posición relativa para contener el contenido */
 }
 
-.Menu {
-  position: absolute; /* Establece la posición absoluta */
-  top: 0; /* Coloca el menú en la parte superior */
-  left: 0; /* Alinea el menú a la izquierda */
-  width: 100%; /* Ajusta el ancho al 100% */
-  z-index: 999; /* Asegura que el menú esté por encima de otros elementos */
-}
-
 @media (min-width: 369px) and (max-width: 768px) {
   .App {
     margin: 200px auto;
