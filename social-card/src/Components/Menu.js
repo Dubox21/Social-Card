@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Menu.css";
 import useSharePage from '../hooks/useSharePage';
 import useCopyLink from '../hooks/useCopyLink';
@@ -7,9 +7,13 @@ import { useToggleMoreInfo } from '../hooks/useToggleMoreInfo'; // Importa el ho
 
 const Menu = () => {
     const sharePage = useSharePage();
-    const {copied, copyLink } = useCopyLink(); // Utiliza el hook directamente como una función
-    const addToBookmarks = useAddToBookmarks(); // Utiliza el hook directamente como una función
+    const { copied, copyLink } = useCopyLink(); // Utiliza el hook directamente como una función
     const { showMoreInfo, toggleMoreInfo } = useToggleMoreInfo(); // Desestructura el objeto retornado por el hook
+    const { addedToBookmarks, addToBookmarks } = useAddToBookmarks();
+
+    const handleAddToBookmarks = () => {
+        addToBookmarks(); // Asegúrate de que addToBookmarks sea una función aquí
+    };
 
     return (
         <div className='menu'>
@@ -24,13 +28,21 @@ const Menu = () => {
                         </a>
                     </li>
                     <hr />
-                     <li className='nav-list__link kanit-regular'><a href="#" onClick={addToBookmarks}><i className="fa-regular fa-star"></i> Guardar</a></li>
+                    <li className='nav-list__link kanit-regular'><a href="#" onClick={handleAddToBookmarks}>
+                        {addedToBookmarks ? <i class="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i>}
+                        Guardar</a></li>
                     <hr />
                     <li className='nav-list__link kanit-regular'>
                         <a href="#" onClick={toggleMoreInfo}>
                             <i className="fa-solid fa-circle-info"></i>
                             {showMoreInfo ? "Ocultar info" : "Mas info..."}
                         </a>
+                        {showMoreInfo && (
+                <div className="more-info">
+                    {/* Aquí puedes colocar el contenido adicional que deseas mostrar */}
+                    <p>Más información aquí...</p>
+                </div>
+            )}
                     </li>
                 </ul>
             </nav>

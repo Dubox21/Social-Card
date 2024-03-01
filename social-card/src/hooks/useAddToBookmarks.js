@@ -4,7 +4,14 @@ const useAddToBookmarks = () => {
     const [addedToBookmarks, setAddedToBookmarks] = useState(false);
 
     const addToBookmarks = () => {
-        if (!addedToBookmarks) {
+        if (addedToBookmarks) {
+            // Si ya está en marcadores, quitarlo
+            // Aquí puedes implementar la lógica para quitarlo de los marcadores
+            // Por ejemplo, puedes usar localStorage para almacenar los marcadores y eliminar el elemento correspondiente
+            // localStorage.removeItem('bookmark_key');
+            setAddedToBookmarks(false);
+        } else {
+            // Si no está en marcadores, agregarlo
             if (window.sidebar && window.sidebar.addPanel) {
                 window.sidebar.addPanel(document.title, window.location.href, ''); // Firefox
             } else if (window.external && ('AddFavorite' in window.external)) {
@@ -16,7 +23,8 @@ const useAddToBookmarks = () => {
         }
     };
 
-    return addToBookmarks;
+    return { addedToBookmarks, addToBookmarks };
 };
 
 export default useAddToBookmarks;
+
