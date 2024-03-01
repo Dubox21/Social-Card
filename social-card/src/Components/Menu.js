@@ -1,57 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Menu.css";
+import useSharePage from '../hooks/useSharePage';
+import useCopyLink from '../hooks/useCopyLink';
+import useAddToBookmarks from '../hooks/useAddToBookmarks';
+import { useToggleMoreInfo } from '../hooks/useToggleMoreInfo'; // Importa el hook como una función
 
 const Menu = () => {
-    const [copied, setCopied] = useState(false);
-
-    const sharePage = () => {
-        if (navigator.share) {
-            navigator.share({
-                title: document.title,
-                url: window.location.href
-            }).then(() => {
-                console.log('Enlace compartido correctamente');
-            }).catch((error) => {
-                console.error('Error al compartir el enlace', error);
-            });
-        } else {
-            console.warn('La API de Web Share no está soportada en este navegador.');
-        }
-    }
-
-    const copyLink = () => {
-        const url = window.location.href;
-        navigator.clipboard.writeText(url)
-            .then(() => {
-                setCopied(true); // Marca como copiado cuando la operación es exitosa
-                setTimeout(() => setCopied(false), 2000); // Reinicia el estado después de 2 segundos
-            })
-            .catch((error) => {
-                console.error('Error al copiar el enlace', error);
-            });
-    }
-
-    const addToBookmarks = () => {
-        // Proporcionar instrucciones al usuario para que agregue la página a los marcadores manualmente
-        alert('Por favor, utiliza el atajo de teclado o la opción de menú de tu navegador para agregar esta página a los marcadores.');
-    }
+    const sharePage = useSharePage();
+    const {copied, copyLink } = useCopyLink(); // Utiliza el hook directamente como una función
+    // const addToBookmarks = useAddToBookmarks(); // Utiliza el hook directamente como una función
+    const { showMoreInfo, toggleMoreInfo } = useToggleMoreInfo(); // Desestructura el objeto retornado por el hook
 
     return (
         <div className='menu'>
             <nav className='nav-bar'>
                 <ul className='nav-list'>
-                    <li className='nav-list__link kanit-regular'><a href='#' onClick={sharePage}><i class="fa-solid fa-share-nodes"></i>Compartir</a></li>
+                    <li className='nav-list__link kanit-regular'><a href='#' onClick={sharePage}><i className="fa-solid fa-share-nodes"></i>Compartir</a></li>
                     <hr />
                     <li className='nav-list__link kanit-regular'>
                         <a href="#" onClick={copyLink}>
-                            {copied ? <i className="fa-solid fa-check-circle"></i> : <i class="fa-solid fa-copy"></i>} {/* Mostrar el icono de verificación si se ha copiado, de lo contrario, el icono de copiar */}
+                            {copied ? <i className="fa-solid fa-check-circle"></i> : <i className="fa-solid fa-copy"></i>}
                             Copiar Enlace
                         </a>
                     </li>
                     <hr />
-                    <li className='nav-list__link kanit-regular'><a href="#" onClick={addToBookmarks}>Guardar</a></li>
+                    {/* <li className='nav-list__link kanit-regular'><a href="#" onClick={addToBookmarks}><i className="fa-regular fa-star"></i> Guardar</a></li> */}
                     <hr />
-                    <li className='nav-list__link kanit-regular'><a href="#">Mas info</a></li>
+                    <li className='nav-list__link kanit-regular'>
+                        <a href="#" onClick={toggleMoreInfo}>
+                            <i className="fa-solid fa-circle-info"></i>
+                            {showMoreInfo ? "Ocultar info" : "Mas info..."}
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
