@@ -2,41 +2,27 @@ import React, { useState } from 'react';
 import "./Footer.css";
 import Modal from './Modal';
 import { useModal } from '../hooks/useModal';
+import useLikes from '../hooks/useLikes';
+import useComments from '../hooks/useComments';
+import useSaveClick from '../hooks/useSaveClick';
 
 const Footer = () => {
     const [isOpenModal, openModal, closeModal] = useModal(false);
-
-    const [likes, setLikes] = useState(0);
-    const [commentsCount, setCommentsCount] = useState(0);
-    const [commentInput, setCommentInput] = useState('');
-    const [comments, setComments] = useState([]);
-    const [isCommenting, setIsCommenting] = useState(false); // Estado para controlar la visibilidad del textarea
-
-    const handleLike = () => {
-        setLikes(likes + 1);
-    };
+    const {likes, handleLike} = useLikes();
+    const {
+        commentsCount,
+        commentInput,
+        comments,
+        isOpenModal: isCommenting,
+        setIsOpenModal: setIsCommenting,
+        handleAddComment,
+        handleCommentInputChange,
+    } = useComments();
+    const {savedCount, handleSaveClick} = useSaveClick();
 
     const handleCommentButtonClick = () => {
         setIsCommenting(true);
         openModal();
-    };
-
-    const handleCommentInputChange = (event) => {
-        setCommentInput(event.target.value);
-    };
-
-    const handleAddComment = () => {
-        if (commentInput.trim() !== '') {
-            setComments([...comments, commentInput]);
-            setCommentInput('');
-            setCommentsCount(commentsCount + 1);
-        }
-    };
-
-    const [savedCount, setSavedCount] = useState(0);
-
-    const handleSaveClick = () => {
-        setSavedCount(savedCount + 1);
     };
 
     return (
