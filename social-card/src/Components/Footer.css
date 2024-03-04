@@ -3,10 +3,12 @@ i {
 }
 
 textarea {
-    width: calc(100% - 40px); /* Ajusta el ancho del textarea restando el padding */
-    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    width: calc(100% - 40px);
+    /* Ajusta el ancho del textarea restando el padding */
+    resize: none;
+    /* Evita que el usuario pueda redimensionar el textarea */
     border: none;
-  }
+}
 
 .container-footer hr {
     border-color: var(--greyLight);
@@ -46,11 +48,15 @@ textarea {
 }
 
 .textarea-container {
-    position: sticky; /* Hace que el textarea se pegue al fondo del contenedor */
-    bottom: 0; /* Fija el textarea en la parte inferior */
-    padding: 10px; /* Añade un espacio alrededor del textarea */
-    background-color: #f8f9fa; /* Color de fondo del textarea */
-  }
+    position: sticky;
+    /* Hace que el textarea se pegue al fondo del contenedor */
+    bottom: 0;
+    /* Fija el textarea en la parte inferior */
+    padding: 10px;
+    /* Añade un espacio alrededor del textarea */
+    background-color: #f8f9fa;
+    /* Color de fondo del textarea */
+}
 
 .textarea-container button {
     position: absolute;
@@ -60,11 +66,11 @@ textarea {
     font-size: 16px;
 }
 
-.textarea-container button:hover{
+.textarea-container button:hover {
     color: var(--pastelBlue);
 }
 
-.comments-container{
+.comments-container {
     margin: 5px 10px;
     font-size: 14px;
     color: var(--darkGrey);
@@ -73,18 +79,23 @@ textarea {
 
 .comment {
     border-bottom: 1px dashed rgba(128, 128, 128, 0.5);
-    padding-bottom: 4px; 
-    margin-bottom: 4px; 
-  }
-
-.container-comments::-webkit-scrollbar {
-    width: 0;
-    height: 5px;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
 }
 
-.container-comments__title{
+.container-comments::-webkit-scrollbar {
+    width: 1px;
+}
+
+.container-comments::-webkit-scrollbar-thumb {
+    background-color: var(--pastelBlue);
+    border-radius: 50px; 
+}
+
+.container-comments__title {
     font-size: 14px;
     text-align: center;
     color: var(--blackLight);
     font-weight: bold;
+    margin-top: 0;
 }

@@ -32,16 +32,14 @@
 }
 
 .modal-close {
-    position: absolute;
+    position: sticky;
     top: .5rem;
-    right: .1rem;
+    left: 13rem;
 }
 
 .modal-close i {
     font-size: 20px;
     color: var(--greyDark);
-    padding-right: 10px;
-    padding-bottom: 3px;
 }
 
 .modal.is-open {
@@ -49,8 +47,8 @@
 }
 
 .container-children {
-    margin: 10px;
-                                                   
+    margin: 20px;
+
 }
 
 @media (min-width: 768px) {
@@ -65,9 +63,9 @@
     }
 
     .modal-container {
-        min-width: 240px;
+        min-width: 250px;
         max-width: 240px;
-        min-height: 300px;
+        min-height: 310px;
         max-height: 300px;
     }
 }

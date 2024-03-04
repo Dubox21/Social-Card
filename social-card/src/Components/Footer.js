@@ -33,6 +33,12 @@ const Footer = () => {
         }
     };
 
+    const [savedCount, setSavedCount] = useState(0);
+
+    const handleSaveClick = () => {
+        setSavedCount(savedCount + 1);
+    };
+
     return (
         <footer className='container-footer'>
             <hr />
@@ -54,10 +60,10 @@ const Footer = () => {
                     </button>
                 </div>
                 <div className='container-interaction__single'>
-                    <button className='container-button'>
+                    <button className='container-button' onClick={handleSaveClick}>
                         <p>
-                            <i class="fa-regular fa-bookmark"></i>
-                            2
+                           {savedCount ? <i class="fa-solid fa-bookmark" style={{ color: '#81b7fd' }}></i> : <i class="fa-regular fa-bookmark"></i>}
+                            {savedCount}
                         </p>
                     </button>
                 </div>

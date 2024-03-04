@@ -11,7 +11,6 @@ ul li {
 .menu {
     background-color: var(--white);
     width: 100%;
-    padding-top: 1.5rem;
 }
 
 .nav-bar a {
@@ -34,11 +33,11 @@ ul li {
 
 .more-info {
     min-width: 100px;
-    max-width: 240px;
+    max-width: 200px;
     min-height: 150px;
-    max-height: 600px;
+    max-height: 100px;
     margin: auto;
-    overflow-y: auto;
+    overflow-y: scroll;
     color: var(--darkGrey);
 }
 
@@ -48,7 +47,7 @@ ul li {
 
 @media (min-width: 1024px) {
     .more-info {
-        min-width: 240px;
+        min-width: 225px;
         max-width: 240px;
         max-height: 300px;
         overflow-y: auto;
