@@ -13,8 +13,8 @@
 
 .modal-container {
     position: relative;
-    min-width: 200px;
-    max-width: 400px;
+    min-width: 250px;
+    max-width: 300px;
     min-height: 300px;
     max-height: 600px;
     overflow-y: auto;
@@ -23,13 +23,12 @@
 }
 
 .modal-container::-webkit-scrollbar {
-    width: 0; 
-    height: 5px; 
+    width: 0;
+    height: 5px;
 }
 
 .modal-container::-webkit-scrollbar-thumb {
-    /* background-color: var(--grey);  */
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .modal-close {
@@ -38,12 +37,20 @@
     right: .1rem;
 }
 
-.modal-close i{
-    font-size: 2rem;
+.modal-close i {
+    font-size: 20px;
+    color: var(--greyDark);
+    padding-right: 10px;
+    padding-bottom: 3px;
 }
 
 .modal.is-open {
     display: flex;
+}
+
+.container-children {
+    margin: 10px;
+                                                   
 }
 
 @media (min-width: 768px) {

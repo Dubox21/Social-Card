@@ -1,10 +1,10 @@
-import React, { useState } from 'react'; 
+import React from 'react'; 
 import "./Header.css";
 import Modal from './Modal';
 import { useModal } from '../hooks/useModal';
 import Menu from "./Menu"; 
 
-function Header({ toggleMenu }) {
+function Header() {
     const[isOpenModal, openModal, closeModal] = useModal (false);
 
     return (

@@ -1,25 +1,90 @@
+i {
+    cursor: pointer;
+}
+
+textarea {
+    width: calc(100% - 40px); /* Ajusta el ancho del textarea restando el padding */
+    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    border: none;
+  }
+
 .container-footer hr {
     border-color: var(--greyLight);
     opacity: 0.3;
 }
 
-.container-interaction{
+.container-interaction {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-.container-interaction__single{
-    margin: 0 20px;
-    color: var(--greyDark);
+.container-interaction__single p i {
+    margin-right: 6px;
 }
 
-.container-interaction__single p{
+.container-interaction__single p {
     margin: 2px;
     font-size: 14px;
 }
 
-.container-interaction__single i{
+.container-interaction__single i {
+    font-size: 18px;
+}
+
+.container-button {
+    margin: 0 20px;
+    color: var(--greyDark);
+}
+
+.container-comments {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.textarea-container {
+    position: sticky; /* Hace que el textarea se pegue al fondo del contenedor */
+    bottom: 0; /* Fija el textarea en la parte inferior */
+    padding: 10px; /* Añade un espacio alrededor del textarea */
+    background-color: #f8f9fa; /* Color de fondo del textarea */
+  }
+
+.textarea-container button {
+    position: absolute;
+    right: 10px;
+    bottom: 22px;
+    color: var(--darkGrey);
     font-size: 16px;
 }
 
+.textarea-container button:hover{
+    color: var(--pastelBlue);
+}
+
+.comments-container{
+    margin: 5px 10px;
+    font-size: 14px;
+    color: var(--darkGrey);
+    font-family: "Kanit", sans-serif;
+}
+
+.comment {
+    border-bottom: 1px dashed rgba(128, 128, 128, 0.5);
+    padding-bottom: 4px; 
+    margin-bottom: 4px; 
+  }
+
+.container-comments::-webkit-scrollbar {
+    width: 0;
+    height: 5px;
+}
+
+.container-comments__title{
+    font-size: 14px;
+    text-align: center;
+    color: var(--blackLight);
+    font-weight: bold;
+}

@@ -1,9 +1,9 @@
-ul{
+ul {
     padding: 0;
     text-align: center;
 }
 
-ul li{
+ul li {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -14,10 +14,10 @@ ul li{
     padding-top: 1.5rem;
 }
 
- .nav-bar a{
+.nav-bar a {
     text-decoration: none;
     color: var(--darkGrey);
- }
+}
 
 .nav-bar {
     display: block;
@@ -29,15 +29,33 @@ ul li{
 
 
 .nav-list__link {
-font-size: 18px;
+    font-size: 18px;
 }
 
 .more-info {
-    max-height: 300px; 
+    min-width: 100px;
+    max-width: 240px;
+    min-height: 150px;
+    max-height: 600px;
+    margin: auto;
     overflow-y: auto;
     color: var(--darkGrey);
 }
 
 .scrollable-content {
-    padding-right: 10px; 
+    padding-right: 10px;
+}
+
+@media (min-width: 1024px) {
+    .more-info {
+        min-width: 240px;
+        max-width: 240px;
+        max-height: 300px;
+        overflow-y: auto;
+        color: var(--darkGrey);
+    }
+
+    .scrollable-content {
+        padding-right: 10px;
+    }
 }

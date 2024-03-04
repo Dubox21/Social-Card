@@ -3,11 +3,11 @@
   height: 500px;
   background-color: var(--white);
   border-radius: 15px;
-  margin: 150px auto;
+  margin: 140px auto;
 }
 
 .app-container {
-  position: relative; /* Establece la posición relativa para contener el contenido */
+  position: relative; 
 }
 
 @media (min-width: 369px) and (max-width: 768px) {

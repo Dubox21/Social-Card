@@ -3,12 +3,14 @@ import "./Content.css";
 
 const Content = () => {
   return (
-    <div className='container-content'>
+    <main className='container-content'>
+      <section>
         <div className='container-img'>
-            <img src={require("../Assets/web-design.jpg")} alt="imagen pc"/>
+          <img src={require("../Assets/web-design.jpg")} alt="imagen pc" />
         </div>
         <p className='kanit-regular'>Estos desafíos han sido creados especialmente para mejorar tus habilidades y prepararte para el mundo real.</p>
-    </div>
+      </section>
+    </main>
   )
 }
 
