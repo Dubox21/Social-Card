@@ -56,7 +56,6 @@ textarea {
     /* Añade un espacio alrededor del textarea */
     background-color: #f8f9fa;
     /* Color de fondo del textarea */
-    padding: 10px;
 }
 
 .textarea-container button {
