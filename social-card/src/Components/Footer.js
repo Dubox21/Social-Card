@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./Footer.css";
 import Modal from './Modal';
 import { useModal } from '../hooks/useModal';
