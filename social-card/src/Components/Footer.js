@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Footer.css";
 import Modal from './Modal';
 import { useModal } from '../hooks/useModal';
@@ -8,17 +8,18 @@ import useSaveClick from '../hooks/useSaveClick';
 
 const Footer = () => {
     const [isOpenModal, openModal, closeModal] = useModal(false);
-    const {likes, handleLike} = useLikes();
+    const { likes, isLiked, handleLike } = useLikes();
     const {
         commentsCount,
         commentInput,
         comments,
         isOpenModal: isCommenting,
         setIsOpenModal: setIsCommenting,
+        newCommentsAdded,
         handleAddComment,
         handleCommentInputChange,
     } = useComments();
-    const {savedCount, handleSaveClick} = useSaveClick();
+    const { savedCount, isClicked, handleSaveClick } = useSaveClick();
 
     const handleCommentButtonClick = () => {
         setIsCommenting(true);
@@ -32,7 +33,7 @@ const Footer = () => {
                 <div className='container-interaction__single'>
                     <button className='container-button' onClick={handleCommentButtonClick}>
                         <p>
-                            {commentsCount ? <i class="fa-solid fa-message" style={{ color: '#81b7fd' }}></i> : <i class="fa-regular fa-message"></i>}
+                            {newCommentsAdded ? <i className="fa-solid fa-message" style={{ color: '#81b7fd' }}></i> : <i className="fa-regular fa-message"></i>}
                             {commentsCount}
                         </p>
                     </button>
@@ -40,7 +41,7 @@ const Footer = () => {
                 <div className='container-interaction__single'>
                     <button className='container-button' onClick={handleLike}>
                         <p>
-                            {likes ? <i class="fa-solid fa-heart" style={{ color: '#cf0202' }}></i> : <i class="fa-regular fa-heart"></i>}
+                            {isLiked ? <i className="fa-solid fa-heart" style={{ color: '#cf0202' }}></i> : <i className="fa-regular fa-heart"></i>}
                             {likes}
                         </p>
                     </button>
@@ -48,7 +49,7 @@ const Footer = () => {
                 <div className='container-interaction__single'>
                     <button className='container-button' onClick={handleSaveClick}>
                         <p>
-                           {savedCount ? <i class="fa-solid fa-bookmark" style={{ color: '#81b7fd' }}></i> : <i class="fa-regular fa-bookmark"></i>}
+                            {isClicked ? <i className="fa-solid fa-bookmark" style={{ color: '#81b7fd' }}></i> : <i className="fa-regular fa-bookmark"></i>}
                             {savedCount}
                         </p>
                     </button>
@@ -69,7 +70,7 @@ const Footer = () => {
                                 onChange={handleCommentInputChange}
                                 placeholder="Escribe tu comentario aquí."
                             />
-                            <button onClick={handleAddComment}><i class="fa-regular fa-paper-plane"></i></button>
+                            <button onClick={handleAddComment}><i className="fa-regular fa-paper-plane"></i></button>
                         </div>
                     </div>
                 )}

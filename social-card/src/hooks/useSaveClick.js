@@ -1,20 +1,20 @@
 import { useState } from 'react';
 
 const useSaveClick = () => {
-    const [savedCount, setSavedCount] = useState(0);
-    const [hasClicked, setHasClicked] = useState(false); // Nuevo estado para verificar si se ha dado clic
+    const [savedCount, setSavedCount] = useState(50);
+    const [isClicked, setIsClicked] = useState(false); // Nuevo estado para verificar si se ha dado click
 
     const handleSaveClick = () => {
-        if (!hasClicked) {
+        if (!isClicked) {
             setSavedCount(savedCount + 1);
-            setHasClicked(true); // Actualiza el estado para indicar que se ha dado clic
+            setIsClicked(true); // Actualiza el estado para indicar que se ha dado click
         } else {
             setSavedCount(savedCount - 1);
-            setHasClicked(false);
+            setIsClicked(false);
         }
     };
 
-    return { savedCount, handleSaveClick };
+    return { savedCount, isClicked, handleSaveClick };
 }
 
 export default useSaveClick;

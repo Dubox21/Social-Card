@@ -1,20 +1,20 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const useLikes = () => {
-    const [likes, setLikes] = useState(210);
-    const [hasClicked, setHasClicked] = useState(false);
+    const [likes, setLikes] = useState(999);
+    const [isLiked, setIsLiked] = useState(false);
 
     const handleLike = () => {
-        if (!hasClicked) {
+        if (!isLiked) {
             setLikes(likes + 1);
-            setHasClicked(true);
+            setIsLiked(true);
         } else {
             setLikes(likes - 1);
-            setHasClicked(false);
+            setIsLiked(false);
         }
     };
 
-    return { likes, handleLike };
+    return { likes, isLiked, handleLike };
 }
 
-export default useLikes
+export default useLikes;
