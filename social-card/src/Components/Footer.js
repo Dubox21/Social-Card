@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
             </div>
             <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                {isCommenting && ( // Mostrar el textarea solo cuando isCommenting es verdadero
+                {isCommenting && ( 
                     <div className='container-comments'>
                         <p className='container-comments__title'>Comentarios</p>
                         {comments.map((comment, index) => (
